@@ -1,0 +1,34 @@
+#labels Featured
+My first Vala program for Windows CE
+
+= Introduction =
+
+So you have installed ValaCE and you want use it? Let's go and write a simple Vala program with ValaForms a.k.a. VForms.
+
+
+= Project structure =
+
+If you followed the Compile instruction you should ended with a copy of all the required library and headers installed in the _wince_ subfolder (e.g. , so now you just need to create a simple folder to store your first program.
+
+So just do a:
+
+{{{mkdir valace-example1}}}
+
+and create there a simple *Makefile* file with the following content:
+{{{
+
+}}}
+
+= Program source =
+
+Now create and edit a vala source with the name *example1.vala* always inside the same folder.
+
+This is the program source
+
+{{{
+
+}}}
+
+Compile it with _make_ and copy the required files to the device. If you want can modify the *ce-deploy* script found in the valaforms subfolder of the source distribution.
+
+Enjoy!
