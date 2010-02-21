@@ -1,7 +1,7 @@
 #labels Phase-Implementation,Featured
 How to compile ValaCE
 
-= Introduction =
+=== Introduction ===
 
 Compiling ValaCE it isn't an easy task, but even not a very difficult one. You'll need to be familiar with the cegcc compiler and you'll need some time.
 
