@@ -1,4 +1,4 @@
+#summary ValaCE in action
 #labels Featured
-#ValaCE in action
 
 == How ValaCE looks ==
