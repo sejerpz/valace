@@ -26,7 +26,17 @@ Now create and edit a vala source with the name *example1.vala* always inside th
 This is the program source
 
 {{{
+/* first simple example */
 
+using VForms;
+using Windows;
+
+static int WinMain(Instance instance, Instance prev_instance, StringW? args, int show_mode)
+{
+	VForms.init (instance);
+	MessageBox.show ("Hello ValaCE!", "ValaCE Example");
+	return VForms.loop_run ();
+}
 }}}
 
 Compile it with _make_ and copy the required files to the device. If you want can modify the *ce-deploy* script found in the valaforms subfolder of the source distribution.
