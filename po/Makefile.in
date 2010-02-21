@@ -28,7 +28,7 @@ top_srcdir = ..
 top_builddir = ..
 
 
-prefix = /home/andrea/Src/vala/valace/svn/wince
+prefix = /home/andrea/Src/vala/valace/git/wince
 exec_prefix = ${prefix}
 datadir = ${datarootdir}
 datarootdir = ${prefix}/share
@@ -36,7 +36,7 @@ libdir = ${exec_prefix}/lib
 DATADIRNAME = lib
 itlocaledir = $(prefix)/$(DATADIRNAME)/locale
 subdir = po
-install_sh = ${SHELL} /home/andrea/Src/vala/valace/svn/install-sh
+install_sh = ${SHELL} /home/andrea/Src/vala/valace/git/install-sh
 # Automake >= 1.8 provides /bin/mkdir -p.
 # Until it can be supposed, use the safe fallback:
 mkdir_p = $(install_sh) -d

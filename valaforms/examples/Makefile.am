@@ -15,11 +15,15 @@ AM_CPPFLAGS = \
 	-include $(CONFIG_HEADER) \
 	$(NULL)
 
-BUILT_SOURCES = example1.vala.stamp \
+BUILT_SOURCES = \
+	example1.vala.stamp \
+	example2.vala.stamp \
 	example-all.vala.stamp \
 	$(NULL)
 
-noinst_PROGRAMS = example1 \
+noinst_PROGRAMS = \
+	example1 \
+	example2 \
 	example-all \
 	$(NULL)
 
@@ -54,6 +58,39 @@ example1_LDADD = \
 	-lgobject-2.0 \
 	-lgthread-2.0 \
 	$(NULL)
+
+##########################################################
+# Example 2
+##########################################################
+
+example2_VALASOURCES = \
+	example2.vala \
+	$(NULL)
+
+
+example2_SOURCES = \
+	example2.vala.stamp \
+	$(example2_VALASOURCES:.vala=.c) \
+	$(NULL)
+
+example2.vala.stamp: $(example2_VALASOURCES)
+	$(VALAC) $(DEBUG) -C --vapidir ../../vapi --vapidir ../vforms --pkg vforms-1.0 --pkg config --pkg windows $(example2_VALASOURCES) 
+	touch $@
+
+example2_LDFLAGS = \
+	-L$(top_srcdir)/valaforms/vforms \
+	-L$(top_srcdir)/glibce/gthread/ \
+	-L$(top_srcdir)/glibce/glib/ \
+	-L$(top_srcdir)/glibce/gobject/ \
+	$(NULL)
+
+example2_LDADD = \
+	-lvforms \
+	-lglibce-2.0 \
+	-lgobject-2.0 \
+	-lgthread-2.0 \
+	$(NULL)
+
 
 ##########################################################
 # Example ALL
