@@ -9,13 +9,13 @@ So you have installed ValaCE and you want use it? Let's go and write a simple Va
 
 = Project structure =
 
-If you followed the Compile instruction you should ended with a copy of all the required library and headers installed in the _wince_ subfolder (e.g. , so now you just need to create a simple folder to store your first program.
+If you followed the Compile instruction you should ended with a copy of all the required library and headers installed in the _wince_ subfolder, so now you just need to create a simple folder to store your first program.
 
-So just do a:
+Just do a:
 
 {{{mkdir valace-example1}}}
 
-and create there a simple *Makefile* file with the following content:
+and create there a simple file called *Makefile* with the following content:
 {{{
 ###########################################################
 # Simple Makefile for ValaForms
@@ -58,6 +58,15 @@ deploy: example1.exe
 }}}
 
 
+Before continuing please check and adjust these two variables according to yours installations paths
+
+{{{
+# Installation directory of the CE-GCC compiler
+MINGW_PATH= ${HOME}/opt/mingw32ce
+
+# Installation directory of ValaCE
+VALACE_PATH= ${WORKING_DIR}/../wince
+}}}
 
 = Program source =
 
