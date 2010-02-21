@@ -17,10 +17,10 @@ Current Status
 || ButtonBase || Base class from which all other buttons derive || Basic || Just the click event is supported ||
 || Button || Push button || Basic || Nothing more than what is already present in ButtonBase ||
 || RadioButton || Radio button || Basic || Nothing more than what is already present in ButtonBase ||
+|| CheckBox || CheckBox button || Basic || Nothing more than what is already present in ButtonBase ||
 || ListBox || Listbox control || Basic || Adding & removing items, getting the current item ||
 || ComboBox || Combobox control || Basic || Adding & removing items, getting the current item ||
 || TextBox || Textbox control || Basic || getting and setting the text ||
-|| CheckBox || CheckBox button || Basic || Nothing more than what is already present in ButtonBase ||
 || GroupBox || GroupBox container || Basic || Nothing more than what is already present in Container ||
 || Panel || Panel container || Basic || Nothing more than what is already present in Container ||
 || TabPage || TabControl page container || Basic || Nothing more than what is already present in Container ||
