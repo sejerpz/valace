@@ -1,9 +1,7 @@
 #summary Some program examples
 #labels Phase-Implementation
 
-=== VForms library examples ===
-
-Simple MessageBox example
+=== Simple MessageBox example ===
 {{{
 /* first simple example */
 
@@ -18,7 +16,7 @@ static int WinMain(Instance instance, Instance prev_instance, StringW? args, int
 }
 }}}
 
-A simple window with a button
+===A simple window with a button===
 {{{
 /* A simple form with a button */
 
@@ -72,4 +70,5 @@ static int WinMain(Instance instance, Instance prev_instance, StringW? args, int
 }}}
 
 
-All controls in action:[http://valace.googlecode.com/svn/trunk/valaforms/examples/example-all.vala example all]
+===All controls in action===
+[http://valace.googlecode.com/svn/trunk/valaforms/examples/example-all.vala example all]
