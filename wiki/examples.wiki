@@ -1,7 +1,7 @@
 #summary Some program examples
 #labels Phase-Implementation
 
-= VForms library examples =
+=== VForms library examples ===
 
 Simple MessageBox example
 {{{
