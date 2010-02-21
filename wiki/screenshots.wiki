@@ -2,3 +2,5 @@
 #labels Featured
 
 == How ValaCE looks ==
+
+http://code.google.com/p/valace/source/browse/trunk/docs/images/valace1.png
