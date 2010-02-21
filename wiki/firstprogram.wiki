@@ -68,7 +68,7 @@ static int WinMain(Instance instance, Instance prev_instance, StringW? args, int
 {
 	VForms.init (instance);
 	MessageBox.show ("Hello ValaCE!", "ValaCE Example");
-	return VForms.loop_run ();
+	return 0;
 }
 }}}
 
