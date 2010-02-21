@@ -3,4 +3,5 @@
 
 == How ValaCE looks ==
 
-http://code.google.com/p/valace/source/browse/trunk/docs/images/valace1.png
+|| http://valace.googlecode.com/svn/trunk/docs/images/valace1.png || http://valace.googlecode.com/svn/trunk/docs/images/valace2.png || http://valace.googlecode.com/svn/trunk/docs/images/valace3.png ||
+|| || ValaCE Demo program in action || ||
