@@ -74,4 +74,42 @@ static int WinMain(Instance instance, Instance prev_instance, StringW? args, int
 
 Compile it with _make_ and copy the required files to the device. If you want can modify the *ce-deploy* script found in the valaforms subfolder of the source distribution.
 
+
+== Distribution ==
+
+To copy all the required files from you PC to the target device I use the *synce-pcp* command that is part of the very good SynCE project [http://www.synce.org/]
+
+I use a script like this (the actual version is _ce-deploy_ under the _valaforms_ folder of the source distribution)
+
+{{{
+#!/bin/sh
+DEST_DIR=$2
+if ["$DEST_DIR" = ""]; then
+	DEST_DIR=":\Temp"
+fi
+
+rm -rf ./deploy-dir
+mkdir ./deploy-dir
+
+cp $MINGW32CE_PATH/bin/libgcc_s_sjlj-1.dll ./deploy-dir
+cp ../glibce/glib/.libs/*.dll ./deploy-dir
+cp ../glibce/gthread/.libs/*.dll ./deploy-dir
+cp ../glibce/gobject/.libs/*.dll ./deploy-dir
+cp $1 ./deploy-dir
+
+../tools/upx-3.04-i386_linux/upx ./deploy-dir/*
+
+synce-pcp ./deploy-dir/libgcc_s_sjlj-1.dll "$DEST_DIR"
+synce-pcp ./deploy-dir/libgobject-2.0-0.dll "$DEST_DIR"
+synce-pcp ./deploy-dir/libglibce-2.0-0.dll  "$DEST_DIR"
+synce-pcp ./deploy-dir/libgthread-2.0-2.dll  "$DEST_DIR"
+synce-pcp ./deploy-dir/`basename $1` "$DEST_DIR"
+}}}
+
+it's worth to note this line:
+
+../tools/upx-3.04-i386_linux/upx ./deploy-dir/*
+
+The upx step isn't optional, but *it's required* in order to fix a ceGcc dll bug. Without compressing the dll you will always get and invalid executable message from Window CE!
+
 Enjoy!
