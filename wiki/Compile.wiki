@@ -41,6 +41,6 @@ If all goes well you should have the GLib / GObject library built under the _gli
 
 It's now time to do a
 
-{{{make install}}}
+{{{$make install}}}
 
 and all the headers and libraries will be installed under the _wince_ folder of the source distribution.
