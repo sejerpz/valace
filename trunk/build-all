@@ -1,0 +1,7 @@
+./autogen.sh --prefix=`pwd`/wince --host=arm-mingw32ce --disable-regex host_alias=arm-mingw32ce
+
+cp libtool.win32ce libtool
+
+cp glibce/config.h.win32 glibce/config.h
+
+make

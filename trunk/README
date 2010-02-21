@@ -1,0 +1,48 @@
+THE ValaCE PROJECT
+
+The ValaCE project was born just as a proof of concept to see if
+Vala could be used for developing Windows CE applications.
+
+It was developed and a few nights and weekends and tested only on
+my Htc phone so don't expect to be very complete or that it works
+everywhere.
+
+It consists of:
+
+	* GLibCE: a port of glib / gobject / gthread to Windows CE
+	* windows.vapi: vala bindings to the Win32 C interface
+	* valaforms: a simple library that wraps the Win32 UI controls
+                     in a more object oriented way.
+
+WHY "Vala"?
+
+Vala is a new object oriented language similar but not equal to C#
+and it uses GLib and GObject for the foundation of its object type 
+system.
+
+So Vala properties, classes interfaces and events can be just thought
+as a nice and convenient syntax around the gobject capabilities.
+
+The main advantage of Vala upon C# is that the code is compiled in
+machine language and more over that you have a strict control on 
+the generated C interface and ABI.
+
+Memory is automatically managed at compile time using reference counted
+objects, this permits to still have a certain degree of control on 
+when allocate & deallocate it, but also free the developer to think
+every time about leaks etc...
+
+For more informations
+
+The Vala language:
+
+	http://live.gnome.org/Vala
+
+How memory management works in Vala:
+
+	http://live.gnome.org/Vala/ReferenceHandling
+
+GLib & GObjects
+
+	http://library.gnome.org/devel/gobject/stable/pt01.html
+
