@@ -110,6 +110,6 @@ it's worth to note this line:
 
 ../tools/upx-3.04-i386_linux/upx ./deploy-dir/*
 
-The upx step isn't optional, but *it's required* in order to fix a ceGcc dll bug. Without compressing the dll you will always get and invalid executable message from Window CE!
+*The upx step isn't optional, but it's required* in order to fix a ceGcc dll bug.* Without compressing the dll you will always get and invalid executable message from Window CE!
 
 Enjoy!
