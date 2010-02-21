@@ -38,3 +38,9 @@ and finally:
 {{{$./build-all}}}
 
 If all goes well you should have the GLib / GObject library built under the _glibce_ folder and the vforms library with some example programs under the _valaforms_ folder.
+
+It's now time to do a
+
+{{{make install}}}
+
+and all the headers and libraries will be installed under the _wince_ folder of the source distribution.
