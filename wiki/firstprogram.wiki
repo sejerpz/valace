@@ -16,8 +16,41 @@ So just do a:
 
 and create there a simple *Makefile* file with the following content:
 {{{
+###########################################################
+# Simple Makefile for ValaForms
+###########################################################
+
+# Installation directory of the CE-GCC compiler
+MINGW_PATH= ${HOME}/opt/mingw32ce
+
+# Installation directory of ValaCE
+VALACE_PATH= ${HOME}/Src/vala/valace/svn/wince
+
+############################################################
+VAPIDIR= ${VALACE_PATH}/share/valace/vapi
+GLIB_INCLUDE = ${VALACE_PATH}/include/glibce-2.0
+GOBJECT_INCLUDE = ${VALACE_PATH}/include/glibce-2.0/glib
+VFORMS_INCLUDE = ${VALACE_PATH}/include/vforms-1.0
+
+LD_DIR = ${VALACE_PATH}/lib
+
+ARCH= arm-mingw32ce
+CFLAGS= -g -D_WIN32_IE=0x0400 -I ${GOBJECT_INCLUDE} -I ${GLIB_INCLUDE} -I ${VFORMS_INCLUDE} -L${LD_DIR}
+LIBS = -lvforms -lglibce-2.0 -lgobject-2.0 -lgthread-2.0 -lcommctrl
+CC= ${ARCH}-gcc ${CFLAGS}
+
+example1.exe: example1.c
+	${CC} -o $@ $? ${LIBS}
+
+example1.c: example1.vala
+	valac -C --vapidir ${VAPIDIR} --pkg windows --pkg vforms-1.0 $?
+
+clean:
+	-rm -f *.c *.o *.exe
 
 }}}
+
+
 
 = Program source =
 
