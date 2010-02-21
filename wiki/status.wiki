@@ -3,17 +3,16 @@ Current Status
 
 = Type system & Threading =
 
-
-||Componend||Status||
-||GLib|| Minimal functionality supported, no intl and character set conversion fails most of the time||
-||GThread||Done||
-||GObject||Done||
+|| Component || Status ||
+|| GLib || Minimal functionality supported, no intl and character set conversion fails most of the time ||
+|| GThread || Done ||
+|| GObject || Done ||
 
 
 = Vala Forms =
 
-|| Control || Description|| Status || Notes ||
-|| Control || Base class from which all other controls derive || Basic || Very simple support for show / hide and text||
+|| Item || Description|| Status || Notes ||
+|| Control || Base class from which all other controls derive || Basic || Very simple support for show / hide and text ||
 || Container || Base class from which all other containers derive || Intermediate || Support for grouping and control subcontrol creation ||
 || ButtonBase || Base class from which all other buttons derive || Basic || Just the click event is supported ||
 || Button || Push button || Basic || Nothing more than what is already present in ButtonBase ||
