@@ -5,6 +5,7 @@ My first Vala program for Windows CE
 
 So you have installed ValaCE and you want use it? Let's go and write a simple Vala program with ValaForms a.k.a. VForms.
 
+*Important Note* You can find all the required files (precompiled binaries and example source) in the valace-runtime-preview archive.
 
 = Project structure =
 
@@ -20,11 +21,13 @@ and create there a simple *Makefile* file with the following content:
 # Simple Makefile for ValaForms
 ###########################################################
 
+WORKING_DIR=$(shell pwd)
+
 # Installation directory of the CE-GCC compiler
 MINGW_PATH= ${HOME}/opt/mingw32ce
 
 # Installation directory of ValaCE
-VALACE_PATH= ${HOME}/Src/vala/valace/svn/wince
+VALACE_PATH= ${WORKING_DIR}/../wince
 
 ############################################################
 VAPIDIR= ${VALACE_PATH}/share/valace/vapi
@@ -47,6 +50,10 @@ example1.c: example1.vala
 
 clean:
 	-rm -f *.c *.o *.exe
+	-rm -rf deploy-dir
+
+deploy: example1.exe
+	./ce-deploy example1.exe
 
 }}}
 
