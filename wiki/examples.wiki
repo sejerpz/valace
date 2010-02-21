@@ -1,5 +1,5 @@
+#summary Some program examples
 #labels Phase-Implementation
-Some program examples
 
 = VForms library examples =
 
