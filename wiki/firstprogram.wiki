@@ -1,5 +1,5 @@
+#summary My first Vala program for Windows CE
 #labels Featured
-My first Vala program for Windows CE
 
 = Introduction =
 
