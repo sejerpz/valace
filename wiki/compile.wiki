@@ -1,5 +1,5 @@
+#summary How to compile ValaCE
 #labels Featured
-How to compile ValaCE
 
 === Introduction ===
 
