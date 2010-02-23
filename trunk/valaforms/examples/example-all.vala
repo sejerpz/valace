@@ -8,6 +8,7 @@ public class MyForm : VForms.Form
 	private Label _label;
 	private ListBox _list_box;
 	private ComboBox _combo_box;
+	private GroupBox _group_box;
 	private int id_item;
 	
 	public MyForm ()
@@ -54,25 +55,25 @@ public class MyForm : VForms.Form
 		button = new CheckBox.with_text ("I'm a checkbox");
 		button.location = Point () { x = 10, y = 1 };
 		button.size = Size () { width = 200, height = 20 };
-		button.clicked.connect (on_button_clicked);
+		button.clicked.connect (on_check_box_clicked);
 		tab_page.controls.append (button);
  		
-		var group = new GroupBox.with_text ("Some radio button here");
-		group.location = Point () { x = 10, y = 25 };
-		group.size = Size () { width = 200, height = 70 };
-		tab_page.controls.append (group);
+		_group_box = new GroupBox.with_text ("Some radio button here");
+		_group_box.location = Point () { x = 10, y = 25 };
+		_group_box.size = Size () { width = 200, height = 70 };
+		tab_page.controls.append (_group_box);
 	
 		button = new RadioButton.with_text ("Radio button 1");
 		button.location = Point () { x = 20, y = 20 };
 		button.size = Size () { width = 170, height = 20 };
 		button.clicked.connect (on_button_clicked);
-		group.controls.append (button);
+		_group_box.controls.append (button);
 		
 		button = new RadioButton.with_text ("Radio button 2");
 		button.location = Point () { x = 20, y = 40 };
 		button.size = Size () { width = 170, height = 20 };
 		button.clicked.connect (on_button_clicked);
-		group.controls.append (button);
+		_group_box.controls.append (button);
 		
 		button = new Button.with_text ("Add");
 		button.location = Point () { x = 10, y = 100 };
@@ -156,7 +157,14 @@ public class MyForm : VForms.Form
 			_list_box.add_item ("Item #%d".printf (id_item + 1));
 		tab_page.controls.append (_list_box);	
 	}
-	
+
+	private void on_check_box_clicked (Control sender)
+	{
+		var cb = sender as CheckBox;
+		
+		_group_box.enabled = cb.checked;
+	}
+		
 	private void on_button_clicked (Control sender)
 	{
 		MessageBox.show ("button %s\r\n\n%s".printf (sender.text, _text_box.text), "VForms test!");
