@@ -34,6 +34,8 @@ namespace VForms
 		public Size size = Size ();
 		
 		protected string _text = null;
+		protected bool _enabled = true;
+		
 		public Window window = Window.NULL;
 		public bool is_dialog = false;
 		public List<Control> controls = new List<Control> ();		
@@ -65,6 +67,24 @@ namespace VForms
 			}
 			
 		}
+		
+		public virtual bool enabled
+		{
+			get {
+				if (is_handle_created) {
+					_enabled = window.is_enabled ();
+				}
+				
+				return _enabled;
+			}
+			set {
+				_enabled = value;
+				if (is_handle_created) {
+					window.enable (_enabled);	
+				}
+			}
+		}
+		
 		public virtual int process_message (Window win, uint msg_id, WParam w_param, LParam l_param, ref bool processed)
 		{
 			int result = 0;
