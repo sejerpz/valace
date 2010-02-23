@@ -354,6 +354,12 @@ namespace Windows
 		
 		[CCode (cname="PostMessage")]
 		public LResult post_message (uint msg_id, WParam wparam, LParam lparam);
+		
+		[CCode (cname="EnableWindow")]
+		public bool enable (bool enabled);
+		
+		[CCode (cname="IsWindowEnabled")]
+		public bool is_enabled ();
 	}
 	
 	[CCode (cname="POINT")]
@@ -444,6 +450,21 @@ namespace Windows
 		SETITEMDATA,
 		GETCURSEL,
 		ERR
+	}
+	
+	[CCode (cprefix="BM_", cname="int")]
+	public enum ButtonMsg
+	{
+		GETCHECK,
+		SETCHECK
+	}
+	
+	[CCode (cprefix="BST_", cname="int")]
+	public enum ButtonStatus
+	{
+		CHECKED,
+		INDETERMINATE,
+		UNCHECKED
 	}
 	
 	[CCode (cprefix="CBS_")]
