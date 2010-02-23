@@ -55,6 +55,19 @@ namespace VForms
         			
         		//MessageBox.show ("groubox %d".printf((int)groupbox_window));
 		}
+		
+		public override bool enabled
+		{
+			get {
+				return base.enabled;
+			}
+			set {
+				base.enabled = value;
+				if (groupbox_window != Window.NULL) {
+					groupbox_window.enable (_enabled);
+				}
+			}
+		}
 	}
 
 }
