@@ -25,9 +25,13 @@ namespace VForms
 {
 	namespace MessageBox
 	{
-		public static void show (string message, string title = "")
+		public static DialogResult show (string message, string title = "", 
+			MessageBoxButtons buttons = MessageBoxButtons.OK, 
+			MessageBoxIcon icon = 0, 
+			MessageBoxDefaultButton def_button = MessageBoxDefaultButton.BUTTON1, 
+			MessageBoxOptions options = MessageBoxOptions.SETFOREGROUND)
 		{
-		        message_box (null, StringW.from_string (message), StringW.from_string (title)); //StringW.from_string (title));
+		        return (DialogResult) message_box (null, StringW.from_string (message), StringW.from_string (title), (int) buttons | (int) icon | (int) def_button | (int) options); //StringW.from_string (title));
 		}
 		
 		internal static void error (string message)

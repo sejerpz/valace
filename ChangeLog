@@ -1,3 +1,23 @@
+2010-02-24  Andrea Del Signore  <sejerpz@tin.it>
+
+Added buttons, icons, options and return value to MessageBox.show method
+
+2010-02-23  Andrea Del Signore  <sejerpz@tin.it>
+
+Example usage of the new checked and enabled properties
+
+2010-02-23  Andrea Del Signore  <sejerpz@tin.it>
+
+Checked property support
+
+2010-02-23  Andrea Del Signore  <sejerpz@tin.it>
+
+Fix enabled support for the GroupBox container
+
+2010-02-23  Andrea Del Signore  <sejerpz@tin.it>
+
+Enabled property support	
+
 2010-02-23  Andrea Del Signore  <sejerpz@tin.it>
 
 Added the bindings for the checked & enabled messages

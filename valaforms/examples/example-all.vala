@@ -199,8 +199,10 @@ public class MyForm : VForms.Form
 	
 	protected void on_button_quit (Control sender)
 	{
-		MessageBox.show ("Bye bye!", "VForms test!");
-		close ();
+		if (MessageBox.show ("Exit now?", "VForms test!", MessageBoxButtons.YESNO, MessageBoxIcon.QUESTION) == DialogResult.YES)
+		{
+			close ();
+		}
 	}
 	
 	protected override void on_destroy ()
