@@ -265,6 +265,20 @@ namespace Windows
 		SHIELD
 	}
 	
+	[CCode (cprefix="ID", cname="int")]
+	public enum DialogResult
+	{
+		ABORT,
+		CANCEL,
+		CONTINUE,
+		IGNORE,
+		NO,
+		OK,
+		RETRY,
+		TRYAGAIN,
+		YES
+	}
+
 	[CCode (cprefix="GWLP_", cname="int")]
 	public enum WindowLong
 	{
@@ -274,10 +288,55 @@ namespace Windows
 		USERDATA
 	}
 	
-	[CCode (cprefix="MB_", cname="intStringW")]
-	public enum MessageBoxStyle
+	[CCode (cprefix="MB_", cname="int")]
+	public enum MessageBoxButtons
 	{
-		SETFOREGROUND
+		SETFOREGROUND,
+		ABORTRETRYIGNORE,
+		CANCELTRYCONTINUE,
+		HELP,
+		OK,
+		OKCANCEL,
+		RETRYCANCEL,
+		YESNO,
+		YESNOCANCEL,
+	}
+	
+	[CCode (cprefix="MB_DEF", cname="int")]
+	public enum MessageBoxDefaultButton
+	{
+		BUTTON1,
+		BUTTON2,
+		BUTTON3,
+		BUTTON4,
+	}
+	
+	[CCode (cprefix="MB_", cname="int")]
+	public enum MessageBoxOptions
+	{
+		APPLMODAL,
+		SYSTEMMODAL,
+		TASKMODAL,
+		DEFAULT_DESKTOP_ONLY,
+		RIGHT,
+		RTLREADING,
+		SETFOREGROUND,
+		TOPMOST,
+		SERVICE_NOTIFICATION,
+		SERVICE_NOTIFICATION_NT3X,
+		
+	}
+	[CCode (cprefix="MB_ICON", cname="int")]
+	public enum MessageBoxIcon
+	{
+		EXCLAMATION,
+		WARNING,
+		INFORMATION,
+		ASTERISK,
+		QUESTION,
+		STOP,
+		ERROR,
+		HAND	
 	}
 	
 	[CCode (cname="HINSTANCE")]
@@ -381,7 +440,7 @@ namespace Windows
 	static int wide_char_to_multi_byte (CodePage code_page, WideToMultiFlags flags, StringW data, int length, char[]? output, char? default_char = null, bool use_default_char = false);
 
 	[CCode (cname="MessageBoxW")]
-	public static void message_box (Window? parent, StringW message, StringW? caption, MessageBoxStyle type = MessageBoxStyle.SETFOREGROUND);
+	public static int message_box (Window? parent, StringW message, StringW? caption, int type = MessageBoxOptions.SETFOREGROUND);
 
 	namespace Utils
 	{
